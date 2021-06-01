@@ -8,8 +8,6 @@ from sqlalchemy import Column, Integer, String
 
 from sqlalchemy.orm.session import Session
 
-
-# SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URI")
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
